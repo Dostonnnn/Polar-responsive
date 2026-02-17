@@ -1,0 +1,78 @@
+$bg-color-primary: #fff4f8;
+$bg-color-secondary: #ffffff;
+$bg-color-footer: #0a0808;
+$primary-color: #0f0101;
+$secondary-color: #d23166;
+
+%flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+%flex-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+%primary-title {
+  font-family: "Fredoka";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3em;
+  line-height: 120.5%;
+  color: $primary-color;
+  opacity: 0.9;
+}
+%secondary-title {
+  font-family: "Fredoka";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.5em;
+  line-height: 49px;
+  color: $primary-color;
+}
+%text {
+  font-family: "Hind Madurai";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 27px;
+  color: $primary-color;
+  opacity: 0.6;
+}
+%secondary-text {
+  font-family: "Hind Madurai";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9em;
+  line-height: 24px;
+  color: $primary-color;
+  opacity: 0.6;
+}
+%button {
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  font-family: "Hind Madurai";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 22px;
+  border: none;
+  cursor: pointer;
+}
+@mixin font($size) {
+  font-size: $size;
+  font-family: "Fredoka";
+  font-weight: 500;
+  font-style: normal;
+  line-height: normal;
+}
+@mixin link($size) {
+  font-size: $size;
+  font-family: "Hind Madurai";
+  font-weight: 600;
+  font-style: normal;
+  line-height: 30px;
+}

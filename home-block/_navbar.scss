@@ -1,0 +1,87 @@
+.navbar {
+  width: 1200px;
+  margin: auto;
+  @extend %flex;
+  &-logo {
+    width: 80px;
+    height: 70px;
+  }
+  &-list {
+    @extend %flex;
+    width: 50%;
+    &-item {
+      padding: 0 10px;
+      border-radius: 5px;
+      transition: all 0.3s linear;
+      background-image: linear-gradient($secondary-color, $secondary-color);
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: 100% 0%;
+      &:hover {
+        background-size: 100% 100%;
+      }
+      &:active {
+        background: linear-gradient($bg-color-secondary, $bg-color-secondary);
+      }
+      &-link {
+        @extend %flex;
+        @include font(16px);
+        justify-content: center;
+        height: 40px;
+        color: $primary-color;
+        transition: all 0.3s linear;
+        &:hover {
+          color: $bg-color-secondary;
+        }
+        &:active {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+  &-btn {
+    @extend %button;
+    transition: all 0.4s linear;
+    background: $secondary-color;
+    &:hover {
+      background: $primary-color;
+      color: $bg-color-secondary;
+    }
+    &:active {
+      background: $bg-color-secondary;
+      color: $secondary-color;
+    }
+  }
+  &-burger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    transition: all 0.3s linear;
+    & div {
+      width: 25px;
+      height: 3px;
+      background-color: $bg-color-footer;
+    }
+    &:hover div {
+      background-color: $secondary-color;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar {
+    padding: 0px 10px;
+    width: 100%;
+    &-list {
+      display: none;
+    }
+    &-btn {
+      display: none;
+    }
+    &-burger {
+      display: flex;
+    }
+  }
+}

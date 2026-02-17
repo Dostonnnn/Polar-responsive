@@ -1,0 +1,62 @@
+.sugar {
+  padding: 0px 10px;
+  width: 1200px;
+  margin: auto;
+  @extend %flex;
+  &-left {
+    width: 50%;
+    &-title {
+      @extend %secondary-title;
+      width: 60%;
+    }
+    &-text {
+      @extend %text;
+      margin: 30px auto;
+    }
+    &-btn {
+      @extend %button;
+      background-color: $secondary-color;
+      transition: all 0.3s linear;
+      &:hover {
+        background: $primary-color;
+        color: $bg-color-secondary;
+      }
+      &:active {
+        background: $bg-color-secondary;
+        color: $secondary-color;
+      }
+    }
+  }
+  &-right {
+    width: 50%;
+    & img {
+      width: 80%;
+      height: 450px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .sugar {
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 50px 10px;
+    &-left {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    &-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      & img {
+        width: 400px;
+      }
+    }
+  }
+}

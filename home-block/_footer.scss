@@ -1,0 +1,141 @@
+.footer {
+  width: 1200px;
+  margin: auto;
+  padding: 50px 10px;
+  @extend %flex-column;
+  &-img {
+    align-self: flex-start;
+  }
+  &-area {
+    @extend %flex;
+    gap: 20px;
+    &-box {
+      width: 280px;
+      @extend %flex-column;
+      gap: 30px;
+      height: 250px;
+      &-text {
+        @include font(14px);
+        color: $bg-color-secondary;
+      }
+      &-icons {
+        @extend %flex;
+        align-self: flex-start;
+        gap: 10px;
+        & i {
+          color: $bg-color-secondary;
+          font-size: 25px;
+          transition: all 0.3s linear;
+          cursor: pointer;
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+      }
+      &-list {
+        &-item {
+          &-link {
+            @include link(16px);
+            color: $bg-color-secondary;
+            font-weight: 400;
+            transition: all 0.3s linear;
+            opacity: 0.6;
+            &:hover {
+              color: $secondary-color;
+              opacity: 1;
+            }
+            &:active {
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+      & span {
+        @include font(14px);
+        color: $bg-color-secondary;
+      }
+      &-div {
+        border: 2px solid $secondary-color;
+        border-radius: 5px;
+        display: flex;
+        &-int {
+          width: 190px;
+          height: 40px;
+          padding: 0px 20px;
+          outline: none;
+          border: none;
+          @extend %text;
+          color: $bg-color-secondary;
+          background: transparent;
+        }
+        &-btn {
+          @extend %button;
+          width: 80px;
+          height: 40px;
+          background-color: $secondary-color;
+          transition: all 0.4s linear;
+          &:hover {
+            background: $bg-color-secondary;
+            color: $secondary-color;
+          }
+          &:active {
+            background: $bg-color-secondary;
+            color: $bg-color-primary;
+          }
+        }
+        &-icons {
+          gap: 10px;
+          & i {
+            color: $bg-color-secondary;
+            font-size: 35px;
+            transition: all 0.3s linear;
+            cursor: pointer;
+            &:hover {
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+    &-box:nth-child(4),
+    &-box:first-child {
+      align-items: flex-start;
+      gap: 40px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    &-img {
+      width: 100%;
+    }
+    &-area {
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: center;
+      &-box {
+        width: 100%;
+        &-text {
+          align-self: center;
+          width: 100%;
+        }
+        &-icons {
+          align-self: center;
+        }
+        &-div {
+          align-self: center;
+        }
+        & span {
+          align-self: center;
+        }
+      }
+      &-box:nth-child(4) {
+        align-self: center;
+      }
+    }
+  }
+}

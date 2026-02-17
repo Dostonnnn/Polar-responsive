@@ -1,0 +1,42 @@
+.cards {
+  @extend %flex;
+  width: 1200px;
+  margin: 50px auto;
+  &-card {
+    padding: 20px;
+    width: 230px;
+    height: 200px;
+    @extend %flex-column;
+    text-align: center;
+    gap: 20px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+    border-radius: 8px;
+    transition: all 0.4s linear;
+    &:hover {
+      box-shadow: $secondary-color 0px 20px 30px -10px;
+    }
+    &:active {
+      background-color: $bg-color-primary;
+    }
+    &-img {
+      height: 40px;
+      width: 40px;
+    }
+    &-title {
+      @include font(1.2em);
+    }
+    &-text {
+      @extend %secondary-text;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .cards {
+    width: 100%;
+    padding: 0px 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+  }
+}

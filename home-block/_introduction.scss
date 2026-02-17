@@ -1,0 +1,66 @@
+.intro {
+  padding: 0px 10px;
+  width: 1200px;
+  margin: 50px auto;
+  @extend %flex;
+  &-left {
+    width: 50%;
+    &-subtitle {
+      @include font(14px);
+      width: 100%;
+    }
+    &-title {
+      width: 100%;
+      @extend %primary-title;
+      margin: 30px 0px;
+      & span {
+        color: $secondary-color;
+      }
+    }
+    &-text {
+      @extend %text;
+      width: 80%;
+    }
+    &-btn {
+      margin-top: 30px;
+      @extend %button;
+      transition: all 0.4s linear;
+      background: $secondary-color;
+      &:hover {
+        background: $primary-color;
+        color: $bg-color-secondary;
+      }
+      &:active {
+        background: $bg-color-secondary;
+        color: $secondary-color;
+      }
+    }
+  }
+  &-right {
+    width: 50%;
+    & img {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .intro {
+    width: 100%;
+    flex-wrap: wrap;
+    &-left {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      &-text {
+        width: 100%;
+      }
+    }
+    &-right {
+      width: 100%;
+    }
+  }
+}
